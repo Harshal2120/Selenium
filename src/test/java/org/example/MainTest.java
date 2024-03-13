@@ -5,47 +5,20 @@ import org.testng.annotations.Test;
 
 public class MainTest {
 
+    Main test;
     @Test
-    public void testRun() {
-    }
-
-    @Test
-    public void testRun2() {
-    }
-
-    @Test
-    public void testRun3() {
-    }
-
-    @Test
-    public void testRun4() {
-    }
-
-    @Test
-    public void testRun5() {
-    }
-
-    @Test
-    public void testRun6() {
-    }
-
-    @Test
-    public void testRun7() {
-    }
-
-    @Test
-    public void testRun8() {
-    }
-
-    @Test
-    public void testRun9() {
-    }
-
-    @Test
-    public void testRun10() {
-    }
-
-    @Test
-    public void testRun11() {
+    public void testRun() throws InterruptedException {
+        test=new Main();
+        test.run();
+        test.run2();
+        test.run3();
+        test.run4();
+        test.run5();
+        test.run6();
+        test.run7();
+        test.run8();
+        test.run9();
+        test.run10();
+        test.run11();
     }
 }
