@@ -5,20 +5,42 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
-
 
 public class Main {
 
     public void run() throws InterruptedException {
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/AutomationPractice/");
         driver.manage().window().maximize();
-        driver.get("https://facebook.com");
+        driver.switchTo().frame("courses-iframe");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//a[contains(text(), 'Courses')]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[contains(text(), 'All Access plan')]")).click();
+
+        Thread.sleep(3000);
+        Actions action = new Actions(driver);
+        WebElement More = driver.findElement(By.xpath("//a[contains(text(), 'More')]"));
+        action.moveToElement(More).build().perform();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//a[contains(text(), 'Part time jobs')]")).click();
+        Thread.sleep(3000);
+
+
+      WebElement element=driver.findElement(By.id("select-job-type"));
+      Select select = new Select(element);
+      select.selectByVisibleText("QA Automation Articles (Java/Python/JavaScript)");
+
+
+
+     /*   driver.get("https://facebook.com");
         driver.findElement(By.id("email")).sendKeys("harshalsomani23@gmail.com");
         driver.findElement(By.name("pass")).sendKeys("Harshal@2110");
         driver.findElement(By.name("login")).click();
@@ -131,5 +153,6 @@ public class Main {
 
         ChromeDriver driver11 = new ChromeDriver();
         driver11.get("https://www.facebook.com");
+    }*/
     }
 }
