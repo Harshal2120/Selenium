@@ -11,7 +11,7 @@ public class MainTest {
     public void testRun() throws InterruptedException {
         test = new Main();
         test.run();
-       /* test.run2();
+        test.run2();
         test.run3();
         test.run4();
         test.run5();
@@ -20,6 +20,6 @@ public class MainTest {
         test.run8();
         test.run9();
         test.run10();
-        test.run11();*/
+        test.run11();
     }
 }

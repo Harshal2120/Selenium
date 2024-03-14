@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
@@ -40,7 +41,7 @@ public class Main {
 
 
 
-     /*   driver.get("https://facebook.com");
+        driver.get("https://facebook.com");
         driver.findElement(By.id("email")).sendKeys("harshalsomani23@gmail.com");
         driver.findElement(By.name("pass")).sendKeys("Harshal@2110");
         driver.findElement(By.name("login")).click();
@@ -153,6 +154,6 @@ public class Main {
 
         ChromeDriver driver11 = new ChromeDriver();
         driver11.get("https://www.facebook.com");
-    }*/
     }
-}
+    }
+
