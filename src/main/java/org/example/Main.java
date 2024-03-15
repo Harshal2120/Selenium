@@ -35,10 +35,9 @@ public class Main {
         Thread.sleep(3000);
 
 
-      WebElement element=driver.findElement(By.id("select-job-type"));
-      Select select = new Select(element);
-      select.selectByVisibleText("QA Automation Articles (Java/Python/JavaScript)");
-
+        WebElement element = driver.findElement(By.id("select-job-type"));
+        Select select = new Select(element);
+        select.selectByVisibleText("QA Automation Articles (Java/Python/JavaScript)");
 
 
         driver.get("https://facebook.com");
@@ -155,5 +154,34 @@ public class Main {
         ChromeDriver driver11 = new ChromeDriver();
         driver11.get("https://www.facebook.com");
     }
+
+    //For the calendar selection of a booking site
+    public void run13 () throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.makemytrip.com/");
+        Thread.sleep(6000);
+
+        //removing ad
+        driver.switchTo().frame("webklipper-publisher-widget-container-notification-frame");
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//i[@class=\"wewidgeticon we_close\"]")).click();
+
+        //booking the flight
+        Thread.sleep(3000);
+        driver.switchTo().defaultContent();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//span[text()='Flights']")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.xpath("//*[@id='fromCity']")).click();
+        driver.findElement(By.xpath("(//p[contains(text(), 'Mumbai')])[1]")).click();
+        driver.findElement(By.xpath("//*[@id= 'toCity']")).click();
+        driver.findElement(By.xpath("//p[contains(text(), 'Pune, India')]")).click();
+        driver.findElement(By.xpath("//div[@aria-label='Sun Mar 17 2024']")).click();
+        driver.findElement(By.xpath("//span[contains(text(), 'Departure')]")).click();
+        driver.findElement(By.xpath("//div[@aria-label='Mon Apr 08 2024']")).click();
+        driver.findElement(By.xpath("//a[contains(text(), 'Search')]")).click();
     }
+}
 

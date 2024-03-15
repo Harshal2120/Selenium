@@ -22,4 +22,10 @@ public class MainTest {
         test.run10();
         test.run11();
     }
+
+    @Test
+    public void MakeMyTripTest() throws InterruptedException {
+        test = new Main();
+        test.run13();
+    }
 }
